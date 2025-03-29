@@ -1,0 +1,352 @@
+/* --- START OF FILE code.css --- */
+body {
+    /* Using system font stack, like the reference seems to for UI elements */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* Dark background similar to reference */
+    background-color: #333; /* Slightly darker charcoal */
+    /* Light primary text color */
+    color: #eaeaeb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px 30px; /* Maintain padding */
+    /* Container blends into the body - remove background, shadow, border */
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0; /* Remove rounding if it's meant to be edge-to-edge */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px; /* More space */
+    padding-bottom: 25px;
+    border-bottom: 1px solid #4f4f52; /* Darker, subtle border */
+}
+
+header h1 {
+    color: #eaeaeb; /* Light primary text */
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 2.8em;
+}
+
+.search-container {
+    margin: 20px auto 0;
+    max-width: 450px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 18px; /* Slightly more padding */
+    font-size: 0.95em;
+    border: none; /* No border */
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* Background slightly darker than main, like reference input */
+    background-color: #444;
+    color: #eaeaeb; /* Light text for input */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+#search-input:focus {
+    outline: none;
+    /* Subtle glow or background change on focus */
+    box-shadow: 0 0 0 2px rgba(224, 122, 95, 0.3); /* Use accent color glow */
+    background-color: #4a4a4a; /* Slightly lighter on focus */
+}
+#search-input::placeholder {
+    color: #8e8e93; /* Muted placeholder text */
+}
+
+
+.main-content {
+    display: grid;
+    grid-template-columns: 240px 1fr 220px;
+    gap: 30px;
+}
+
+#interaction-hub {
+    /* Blends in */
+}
+
+#interaction-hub h2 {
+    margin-top: 0;
+    font-size: 0.9em; /* Smaller */
+    font-weight: 500; /* Lighter weight */
+    color: #8e8e93; /* Muted secondary text */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px; /* More spacing */
+}
+
+
+#interaction-hub button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: none;
+    border-radius: 7px;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #cccccc; /* Slightly dimmer default text for buttons */
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    line-height: 1.4;
+}
+
+#interaction-hub button:hover {
+    background-color: #444; /* Subtle background on hover */
+    color: #eaeaeb; /* Brighter text on hover */
+}
+
+#interaction-hub button.active {
+    /* Accent color background */
+    background-color: #E07A5F; /* Terracotta/Orange Accent */
+    color: #ffffff; /* White text on accent */
+    font-weight: 600;
+}
+
+/* Reset button styling */
+#interaction-hub button#show-all-topics {
+     margin-top: 15px;
+     background-color: #4a4a4a; /* Dark gray background */
+     color: #cccccc; /* Dimmer text */
+     font-weight: 500;
+}
+#interaction-hub button#show-all-topics:hover {
+     background-color: #555;
+     color: #eaeaeb;
+}
+#interaction-hub button#show-all-topics.active {
+    background-color: #E07A5F;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+#info-display {
+    /* Blends in - remove background, border */
+    background-color: transparent;
+    padding: 10px 0px; /* Adjust padding if needed, maybe less */
+    border: none;
+    border-radius: 0;
+    min-height: 400px;
+}
+
+/* Search results styling */
+#info-display .search-results-container {
+     padding: 10px 0;
+}
+#info-display .search-results-container h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #8e8e93; /* Muted secondary text */
+    font-size: 1.1em;
+    font-weight: 600;
+}
+#info-display .search-result-item {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 6px;
+    background-color: #444; /* Dark gray background */
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    font-size: 0.95em;
+    text-align: left;
+    color: #eaeaeb; /* Light text */
+}
+#info-display .search-result-item:hover {
+    background-color: #505050; /* Slightly lighter on hover */
+}
+
+/* Content display styling */
+#info-display h3 { /* Topic Title */
+    margin-top: 0;
+    color: #eaeaeb; /* Light primary text */
+    border-bottom: 1px solid #4f4f52; /* Darker subtle border */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+#info-display h4 { /* Section Heading */
+    color: #eaeaeb; /* Light primary text */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+#info-display ul {
+    padding-left: 25px;
+    margin-bottom: 18px;
+    list-style-type: disc; /* Standard disc */
+}
+#info-display li {
+    margin-bottom: 12px;
+    color: #cccccc; /* Slightly dimmer text for list items */
+}
+#info-display ul li::marker { /* Style the bullet point */
+    color: #8e8e93; /* Muted color for bullets */
+}
+
+#info-display .rule-section {
+    margin-bottom: 30px;
+}
+
+#info-display .rule-section strong {
+    color: #eaeaeb; /* Light primary text */
+    font-weight: 600; /* Rely on weight */
+}
+#info-display .rule-section code {
+    font-size: 0.9em;
+    background-color: #4a4a4a; /* Dark gray background */
+    padding: 3px 6px;
+    border-radius: 5px;
+    color: #cccccc; /* Dimmer code text */
+    font-family: "SF Mono", Monaco, Consolas, "Courier New", monospace;
+}
+
+
+#info-display .official-rule {
+    font-size: 0.8em;
+    color: #8e8e93; /* Muted secondary text */
+    margin-top: 30px;
+    border-top: 1px solid #4f4f52; /* Darker subtle border */
+    padding-top: 15px;
+    text-align: left;
+}
+
+.info-placeholder {
+    text-align: center;
+    color: #8e8e93; /* Muted secondary text */
+    padding: 80px 20px;
+    font-size: 1.1em;
+}
+.info-placeholder h2 {
+    color: #eaeaeb; /* Light primary text */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+/* Style for the icon next to the Welcome heading */
+.info-placeholder h2 .welcome-icon {
+    height: 1em; /* Set height equal to the current font-size of the h2 */
+    width: auto;   /* Maintain aspect ratio */
+    vertical-align: middle; /* Align vertically with the middle of the text. */
+    /* Adjust 'vertical-align' if 'middle' isn't quite right visually. */
+    /* Common alternatives to try: baseline, text-bottom, text-top */
+    /* Or fine-tune with a small negative value like: */
+    /* vertical-align: -0.12em; */
+    margin-right: 0.4em; /* Space between icon and text */
+}
+
+#safety-reminders {
+    background-color: #444; /* Dark gray background */
+    border: none;
+    padding: 20px;
+    border-radius: 10px; /* Keep some rounding for this distinct block */
+}
+
+#safety-reminders h2 {
+    margin-top: 0;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #8e8e93; /* Muted secondary text */
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+#safety-reminders ul {
+    list-style: none;
+    padding: 0;
+}
+
+#safety-reminders li {
+    margin-bottom: 12px;
+    font-size: 0.9em;
+    color: #cccccc; /* Dimmer text */
+    padding-left: 5px;
+}
+
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.75em;
+    color: #8e8e93; /* Muted secondary text */
+    border-top: 1px solid #4f4f52; /* Darker subtle border */
+    padding-top: 25px;
+}
+
+footer a {
+    color: #E07A5F; /* Accent color for links */
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design Adjustments (Should adapt okay, but test) */
+@media (max-width: 1000px) {
+    .main-content {
+        grid-template-columns: 240px 1fr;
+        gap: 25px;
+    }
+     #safety-reminders {
+        grid-column: 1 / -1;
+        order: 3;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard-container {
+        margin: 0 auto; /* Remove side margin */
+        padding: 15px 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+     .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+     #safety-reminders {
+        grid-column: auto;
+        order: 3;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    #interaction-hub {
+        padding-right: 0;
+        order: 1;
+        margin-bottom: 20px;
+    }
+     #info-display {
+         order: 2;
+         padding: 10px 0px; /* Adjust padding */
+     }
+     header h1 { font-size: 1.6em; }
+     #interaction-hub button { font-size: 0.95em; }
+     footer { font-size: 0.7em;}
+}
