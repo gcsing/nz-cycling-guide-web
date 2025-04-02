@@ -76,17 +76,23 @@ header h1 {
     /* Blends in */
 }
 
-#interaction-hub h2 {
-    margin-top: 0;
+/* --- Style for the Category Headings --- */
+#interaction-hub h4 {
+    margin-top: 0; /* Remove default top margin */
     font-size: 0.9em; /* Smaller */
-    font-weight: 500; /* Lighter weight */
+    font-weight: 600; /* Slightly bolder than button text */
     color: #8e8e93; /* Muted secondary text */
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: none;
+    margin-bottom: 10px; /* Space below heading */
+    padding-bottom: 5px; /* Optional subtle line */
+    border-bottom: 1px solid #4f4f52; /* Subtle separator */
     text-transform: uppercase;
     letter-spacing: 0.8px; /* More spacing */
 }
+/* Add space above subsequent category headings */
+#interaction-hub h4:not(:first-child) {
+    margin-top: 20px; /* Space above the "Other" heading */
+}
+/* --- End Category Heading Styles --- */
 
 
 #interaction-hub button {
@@ -94,7 +100,7 @@ header h1 {
     align-items: center;
     width: 100%;
     padding: 9px 12px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Keep existing button spacing */
     background-color: transparent;
     border: none;
     border-radius: 7px;
@@ -119,12 +125,30 @@ header h1 {
     font-weight: 600;
 }
 
-/* Reset button styling */
+/* --- Style for the external link icon --- */
+#interaction-hub button .external-link-icon {
+    margin-left: auto; /* Push icon to the right */
+    font-size: 0.9em; /* Slightly smaller */
+    opacity: 0.6;   /* Make it subtle */
+    padding-left: 5px; /* Space from text */
+    transition: opacity 0.15s ease; /* Smooth transition */
+}
+/* Optional: Make icon more prominent on hover */
+#interaction-hub button:hover .external-link-icon {
+    opacity: 1;
+}
+/* --- End External Link Icon Style --- */
+
+
+/* Reset button styling (keep it distinct) */
 #interaction-hub button#show-all-topics {
-     margin-top: 15px;
+     margin-top: 25px; /* More space before reset button */
      background-color: #4a4a4a; /* Dark gray background */
      color: #cccccc; /* Dimmer text */
      font-weight: 500;
+}
+#interaction-hub button#show-all-topics .external-link-icon { /* Hide icon on reset */
+    display: none;
 }
 #interaction-hub button#show-all-topics:hover {
      background-color: #555;
@@ -150,12 +174,15 @@ header h1 {
 #info-display .search-results-container {
      padding: 10px 0;
 }
-#info-display .search-results-container h4 {
+#info-display .search-results-container h4 { /* Style for "Search Results:" heading */
     margin-top: 0;
     margin-bottom: 15px;
     color: #8e8e93; /* Muted secondary text */
-    font-size: 1.1em;
+    font-size: 1.1em; /* Keep slightly larger than content headers */
     font-weight: 600;
+    border-bottom: none; /* No border for search results heading */
+    text-transform: none; /* No uppercase for search results */
+    letter-spacing: normal;
 }
 #info-display .search-result-item {
     display: block;
@@ -174,6 +201,13 @@ header h1 {
 #info-display .search-result-item:hover {
     background-color: #505050; /* Slightly lighter on hover */
 }
+#info-display .search-result-item .external-link-icon { /* Style icon in search results */
+    margin-left: auto;
+    font-size: 0.9em;
+    opacity: 0.6;
+    padding-left: 5px;
+}
+
 
 /* Content display styling */
 #info-display h3 { /* Topic Title */
@@ -186,12 +220,16 @@ header h1 {
     font-weight: 600;
 }
 
-#info-display h4 { /* Section Heading */
+#info-display h4 { /* Section Heading within content area */
     color: #eaeaeb; /* Light primary text */
     margin-top: 25px;
     margin-bottom: 10px;
     font-size: 1.15em;
     font-weight: 600;
+    /* Reset properties potentially inherited from nav h4 */
+    border-bottom: none;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 #info-display ul {
@@ -223,7 +261,22 @@ header h1 {
     color: #cccccc; /* Dimmer code text */
     font-family: "SF Mono", Monaco, Consolas, "Courier New", monospace;
 }
-
+/* Style for links within the info display */
+#info-display a {
+    color: #E07A5F; /* Accent color */
+    text-decoration: none;
+    font-weight: 500;
+}
+#info-display a:hover {
+    text-decoration: underline;
+}
+#info-display a .external-link-icon { /* Style icon within links */
+    display: inline-block; /* Make it inline */
+    font-size: 0.85em;
+    margin-left: 3px; /* Closer to text */
+    opacity: 0.7;
+    vertical-align: text-top; /* Align nicely */
+}
 
 #info-display .official-rule {
     font-size: 0.8em;
@@ -250,10 +303,6 @@ header h1 {
     height: 1em; /* Set height equal to the current font-size of the h2 */
     width: auto;   /* Maintain aspect ratio */
     vertical-align: middle; /* Align vertically with the middle of the text. */
-    /* Adjust 'vertical-align' if 'middle' isn't quite right visually. */
-    /* Common alternatives to try: baseline, text-bottom, text-top */
-    /* Or fine-tune with a small negative value like: */
-    /* vertical-align: -0.12em; */
     margin-right: 0.4em; /* Space between icon and text */
 }
 
@@ -306,7 +355,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design Adjustments (Should adapt okay, but test) */
+/* Responsive Design Adjustments */
 @media (max-width: 1000px) {
     .main-content {
         grid-template-columns: 240px 1fr;
@@ -346,7 +395,8 @@ footer a:hover {
          order: 2;
          padding: 10px 0px; /* Adjust padding */
      }
-     header h1 { font-size: 1.6em; }
-     #interaction-hub button { font-size: 0.95em; }
+     header h1 { font-size: 2.2em; }
+     #interaction-hub h4 { font-size: 0.85em; }
+     #interaction-hub button { font-size: 0.9em; }
      footer { font-size: 0.7em;}
 }
