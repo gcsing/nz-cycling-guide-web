@@ -22,8 +22,8 @@
         <div class="main-content">
             <!-- This nav element has the ID used by the JS to find buttons -->
             <nav id="interaction-hub">
-                <h2>Common Topics</h2>
-                <!-- Each button MUST have the 'data-topic' attribute matching a key in rulesData -->
+                <!-- Category 1: Bike Rules -->
+                <h4>Bike Rules</h4>
                 <button data-topic="helmet">⛑️Wearing a Helmet</button>
                 <button data-topic="lights">💡Lights & Visibility</button>
                 <button data-topic="footpath">🚶‍♀️Riding on Footpaths</button>
@@ -35,21 +35,30 @@
                 <button data-topic="passengers">🧑‍🤝‍🧑Carrying Passengers</button>
                 <button data-topic="towing">🔗Towing Things</button>
                 <button data-topic="definitions">📜Key Definitions</button>
-                <!-- This button resets the view - it also needs the data-topic attribute -->
+
+                <!-- Category 2: Other -->
+                <h4>Other</h4>
+                <button data-topic="buyersguide">🛒 Bike Buyer's Guide</button>
+                <button data-topic="cyclingcode">📜 NZ Code for Cycling <span class="external-link-icon">↗</span></button>
+                <!-- ******************* NEW SAFETY STANDARD BUTTON ADDED HERE ******************* -->
+                <button data-topic="safetystandard">🛡️ Bike Safety Standards (New Bikes) <span class="external-link-icon">↗</span></button>
+                <!-- ************************************************************************** -->
+
+
+                <!-- Reset Button (kept separate) -->
                 <button data-topic="all" id="show-all-topics">Show All Topics / Reset</button>
             </nav>
 
             <!-- This section has the ID used by JS to display information -->
             <section id="info-display">
                 <!-- Initial content (placeholder) -->
-                            <!-- Initial content (placeholder) -->
-            <div class="info-placeholder">
-                <h2><img src="bicycle-icon.png" alt="Bicycle Icon" class="welcome-icon"> Welcome!</h2>
-                <p>Your one-stop, user-friendly guide to understanding New Zealand's cycling regulations. Easily search, explore, and master the essential rules to keep you safe, confident, and compliant on the road.</p>
-		<br> 
-		<p>Click a topic on the left or use the search bar above to find simplified cycling rules.</p>
-                <p>Based on the Land Transport (Road User) Rule 2004.</p>
-            </div>
+                <div class="info-placeholder">
+                    <h2><img src="bicycle-icon.png" alt="Bicycle Icon" class="welcome-icon"> Welcome!</h2>
+                    <p>Your one-stop, user-friendly guide to understanding New Zealand's cycling regulations. Easily search, explore, and master the essential rules to keep you safe, confident, and compliant on the road.</p>
+                    <br>
+                    <p>Click a topic below or use the search bar above to find simplified cycling rules and guides.</p>
+                    <p>Based on the Land Transport (Road User) Rule 2004 and other NZTA resources.</p>
+                </div>
             </section>
 
             <!-- This aside has the ID used by JS (though currently just for selection) -->
@@ -68,7 +77,7 @@
 
         <footer>
             <p><strong>Disclaimer:</strong> This is a simplified guide (data based on Oct 2024 version of Rule). Rules can change. Always refer to the official <a href="https://www.legislation.govt.nz/regulation/public/2004/0427/latest/whole.html" target="_blank" rel="noopener noreferrer">Land Transport (Road User) Rule 2004</a> and <a href="https://www.nzta.govt.nz/walking-cycling-and-public-transport/cycling/cycling-in-new-zealand/" target="_blank" rel="noopener noreferrer">Waka Kotahi NZTA cycling guides</a> for definitive legal requirements.</p>
-		<p>Currated by <strong>SUCOGI STUDIO</strong></p>
+            <p>Currated by <strong>SUCOGI STUDIO</strong></p>
         </footer>
     </div>
 
