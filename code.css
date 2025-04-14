@@ -1,4 +1,3 @@
-/* ----- Updated code.js with integrated Code Summary points ----- */
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM Loaded. Initializing dashboard script."); // Log: Script start
 
